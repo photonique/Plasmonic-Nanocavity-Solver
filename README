@@ -1,0 +1,103 @@
+
+
+      		       1D Plasmonic Nanocavity Solver
+		       
+                        Author: Muthiah Annamalai
+
+Solver:
+=======
+This package contains code for calculating the electric field in surface of
+a 1D Silver thinfilm nanocavity on Silicon substrate and further propagating
+this nearfield to a farfield. Solvers further compute the farfield radiation
+pattern of this nanocavity, and its coupling to a TEM00 Gaussian mode.
+
+Typically these nanophotonic devices based on Plasmon propagation in sub-wavelength nanocavities offer oppotunities for Purcell-effect driven single photon
+emitters, and mode shaping for efficient farfield radiation collections.
+
+Further this package offers nonlinear discrete search methods using Genetic Algorithms and Particle-Swarm-Optimizations for efficient search of geometries with
+suitable properties for devices providing resonance and transmission at different
+wavelengths simulatenously. Such devices maybe useful in nonlinear optics applications.
+
+Acknowlegements:
+================
+Some parts of this work were done in collaboration with my graduate advisor.
+
+CITATION:
+=========
+To cite usage of this solver, please us the following citation:
+
+ Muthiah Annamalai & Michael Vasilyev (2010) Optimization of coupling from a sub-wavelength nanoaperture to the fundamental Gaussian mode, Journal of Modern Optics, 57:19, 1954-1960, DOI: 10.1080/09500340.2010.519830 
+
+To refer to the article published in J. Mod. Opt. above please get the publication from the following URLs:
+ URL: https://www.tandfonline.com/doi/citedby/10.1080/09500340.2010.519830
+ Also mirrored at: http://www.uta.edu/faculty/vasilyev/papers/JMO_nanoaperture.pdf
+
+
+LICENSE:
+========
+The code in this package may be used and shared under terms of the MIT license,
+unless otherwise clearly marked for use under a different license.
+
+###############################################################################
+11/18/08 : Code scripts written and their short descriptions
+
+
+GA subroutine functions
+-----------------------
+	binval.m
+	binvec.m
+	ga_aperiodic_scaled.m
+	ga_asymmetric_scaled.m
+	ga_depth_aperiodic_scaled.m
+	ga_mutate_binvec.m
+	ga_xover_binvec.m
+	genseq.m
+	randint.m
+	rastrigin.m
+
+
+Solvers 
+---------------------------
+	ttotal_aperiodic_solver.m	: Ttot solver aperiodic, depth fix
+	ttotal_periodic_solver.m	: Ttot solver periodic, depth fix
+	asymmetric_solver_scaled.m	: asymmetric aperiodic, depth fix
+
+Aperiodic Solvers 
+-----------------
+
+	[ Scaled Waist case ]
+	---------------------
+
+	depth variations allowed
+	------------------------
+	aperiodic_depthsolver_scaled.m		: coupling to gaussian mode
+	aperiodic_depthsolver_scaled_ttotal.m	: just reflection 1 - Ttotal
+
+	depth h fixed
+	-------------
+	aperiodic_solver_scaled.m		: depth fixed
+		
+	[ Unscaled Waist case ]
+	-----------------------
+	aperiodic_solver_unscaled.m
+
+Aperiodic GA Solvers
+--------------------
+
+	Fixed Lambda GA Solver at particular N
+	--------------------------------------
+	lambda_aperiodic_scaled.m			: depth fixed
+	lambda_depth_aperiodic_scaled.m			: depth variable
+	
+Postprocessing drawing code
+---------------------------
+draw_JMO_cavity.m
+drawcavity.m
+drawing_postproc.m	
+
+OPA optimization GA code
+---------------------------
+opa_hillclimb_lambda_aperiodic_scaled.m
+opa_lambda_dapscaled.m
+sfg_hillclimb_apscaled.m
+
